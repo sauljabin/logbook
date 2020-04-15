@@ -34,18 +34,11 @@ import static java.util.stream.Collectors.toList;
 public class Logbook {
 
     private final Logger logger;
-    private final List<Pair> pairs;
+    private final List<Pair> pairs = new ArrayList<>();
     private Throwable exception;
 
     private Logbook(Logger logger) {
         this.logger = logger;
-        pairs = new ArrayList<>();
-    }
-
-    private Logbook(Logger logger, List<Pair> pairs, Throwable exception) {
-        this.logger = logger;
-        this.pairs = pairs;
-        this.exception = exception;
     }
 
     /**
@@ -125,10 +118,8 @@ public class Logbook {
      * @see <a href="https://www.slf4j.org/apidocs/org/slf4j/helpers/MessageFormatter.html" target="_blank">MessageFormat</a>
      */
     public Logbook add(String key, String valueFormat, Object... values) {
-        List<Pair> pairsCopy = new ArrayList<>(pairs);
-        pairsCopy.add(new Pair(key, valueFormat, values));
-        Logbook logbook = new Logbook(logger, pairsCopy, exception);
-        return logbook;
+        pairs.add(new Pair(key, valueFormat, values));
+        return this;
     }
 
     private Logbook add(LogbookKey key, String valueFormat, Object... values) {

@@ -85,23 +85,13 @@ class LogbookTest {
     }
 
     @Test
-    void shouldCleanAfterInvoke() throws NoSuchFieldException {
-        logbook.add(randomKey, randomValue)
-                .info();
-
-        List<Pair> pairs = (List<Pair>) getFieldValue(logbook, "pairs");
-        assertThat(pairs)
-                .hasSize(0);
-    }
-
-    @Test
-    void shouldCreateNewLogbook() {
+    void shouldNotCreateNewLogbook() {
         Logbook addLogbook = logbook.add(randomKey, randomValue);
 
         addLogbook.info();
 
         assertThat(addLogbook)
-                .isNotSameAs(logbook);
+                .isSameAs(logbook);
     }
 
     @Test
@@ -240,6 +230,19 @@ class LogbookTest {
         String message2 = getRandomString();
         logbook.add("message1", message1)
                 .add("message2", message2)
+                .info();
+
+        verify(logger)
+                .info("message1=\"{}\" message2=\"{}\"", new Object[]{message1, message2});
+    }
+
+    @Test
+    void shouldInvokeLogWithMultiplePairsUsingBuilderQualities() {
+        String message1 = getRandomString();
+        String message2 = getRandomString();
+        logbook.add("message1", message1);
+
+        logbook.add("message2", message2)
                 .info();
 
         verify(logger)
