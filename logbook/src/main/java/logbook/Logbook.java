@@ -866,40 +866,44 @@ public class Logbook {
      * Logs de mensaje en level INFO.
      * Limpia el mensaje previo, esto permite reutilizar el objeto y construir un mensaje nuevo.
      */
-    public void info() {
+    public Logbook info() {
         logger.info(createStringFormat(), createArgumentsList());
+        return this;
     }
 
     /**
      * Logs de mensaje en level DEBUG.
      * Limpia el mensaje previo, esto permite reutilizar el objeto y construir un mensaje nuevo.
      */
-    public void debug() {
-        logger.debug(createStringFormat(), createArgumentsList());
+    public Logbook debug() {
+        logger.debug(createStringFormat(), createArgumentsList()); return this;
     }
 
     /**
      * Logs de mensaje en level ERROR.
      * Limpia el mensaje previo, esto permite reutilizar el objeto y construir un mensaje nuevo.
      */
-    public void error() {
+    public Logbook error() {
         logger.error(createStringFormat(), createArgumentsList());
+        return this;
     }
 
     /**
      * Logs de mensaje en level TRACE.
      * Limpia el mensaje previo, esto permite reutilizar el objeto y construir un mensaje nuevo.
      */
-    public void trace() {
+    public Logbook trace() {
         logger.trace(createStringFormat(), createArgumentsList());
+        return this;
     }
 
     /**
      * Logs de mensaje en level WARN.
      * Limpia el mensaje previo, esto permite reutilizar el objeto y construir un mensaje nuevo.
      */
-    public void warn() {
+    public Logbook warn() {
         logger.warn(createStringFormat(), createArgumentsList());
+        return this;
     }
 
     private String createStringFormat() {

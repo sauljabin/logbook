@@ -3,7 +3,7 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'logbook.demo.App'
+mainClassName = 'logbook.demo.Demo'
 sourceCompatibility = '11'
 
 dependencies {
