@@ -3,14 +3,10 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'App'
+mainClassName = 'logbook.demo.App'
 sourceCompatibility = '11'
 
 dependencies {
     implementation 'ch.qos.logback:logback-classic:1.2.3'
     implementation project(':logbook')
-}
-
-repositories {
-    mavenCentral()
 }

@@ -14,10 +14,6 @@ dependencies {
     testImplementation 'com.github.javafaker:javafaker:0.16'
 }
 
-repositories {
-    mavenCentral()
-}
-
 test {
     useJUnitPlatform()
     testLogging {
