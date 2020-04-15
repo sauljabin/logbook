@@ -14,3 +14,6 @@ doc:
 
 coverage:
 	@ $(gradle) test jacocoTestReport jacocoTestCoverageVerification
+
+run:
+	@ $(gradle) run

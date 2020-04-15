@@ -1,0 +1,74 @@
+plugins {
+    id 'jacoco'
+    id 'java-library'
+}
+
+sourceCompatibility = '11'
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.29'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.3.2'
+    testImplementation 'org.assertj:assertj-core:3.11.1'
+    testImplementation 'org.mockito:mockito-core:2.23.4'
+    testImplementation 'com.github.javafaker:javafaker:0.16'
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat = 'full'
+    }
+}
+
+jacoco {
+    toolVersion = '0.8.2'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Implementation-Title': project.name,
+                'Implementation-Version': project.version,
+                'Implementation-Vendor': project.group
+        )
+    }
+    from sourceSets.main.allJava
+}
+
+javadoc {
+    options.charSet = 'UTF-8'
+}
+
+processResources {
+    filesMatching('**logbook-lib.properties') {
+        expand(
+                'libName': project.name,
+                'libVersion': project.version,
+                'libVendor': project.group,
+                'libRevision': System.env.GIT_COMMIT ?: 'no-commit'
+        )
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'CLASS'
+            limit {
+                minimum = 0.80
+            }
+        }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        html.destination file('build/jacocoHtml')
+    }
+}

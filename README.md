@@ -28,3 +28,8 @@ Javadoc:
 ```
 make doc
 ```
+
+Run demo:
+```
+make run
+```

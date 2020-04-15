@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = 'App'
+sourceCompatibility = '11'
+
+dependencies {
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation project(':logbook')
+}
+
+repositories {
+    mavenCentral()
+}
