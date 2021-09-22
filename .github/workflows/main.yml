@@ -19,4 +19,5 @@ jobs:
         run: ./gradle test
       - name: Publish Coverage
         uses: codecov/codecov-action@v2
-        file: ./logbook/build/reports/jacoco/test/jacocoTestReport.xml
+        with:
+          files: ./logbook/build/reports/jacoco/test/jacocoTestReport.xml
