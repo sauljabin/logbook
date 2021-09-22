@@ -6,7 +6,11 @@ plugins {
 mainClassName = 'logbook.demo.Demo'
 sourceCompatibility = '11'
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
-    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation 'ch.qos.logback:logback-classic:1.2.6'
     implementation project(':logbook')
 }

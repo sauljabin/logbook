@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: |
+          apt update
+          apt install openjdk-11-jdk
+      - name: Run Tests
+        run: ./gradle test
+      - name: Publish Coverage
+        uses: codecov/codecov-action@v2
+        file: ./logbook/build/reports/jacoco/test/jacocoTestReport.xml
