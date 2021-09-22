@@ -16,7 +16,7 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
       - name: Run Tests
-        run: ./gradle test
+        run: ./gradlew test
       - name: Publish Coverage
         uses: codecov/codecov-action@v2
         with:
