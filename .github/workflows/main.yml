@@ -21,5 +21,3 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           files: ./logbook/build/reports/jacoco/report.xml
-          flags: jacoco
-          verbose: true

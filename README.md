@@ -17,13 +17,13 @@ Clone into your project:
 git clone https://github.com/sauljabin/logbook.git
 ```
 
-Include it in `settings.gradle`:
+Include it at `settings.gradle`:
 ```groovy
 include('logbook')
 project(":logbook").projectDir = file("logbook/logbook")
 ```
 
-Add it as a dependency (using [logback](http://logback.qos.ch/)):
+Add it as a dependency at `build.gradle` (using [logback](http://logback.qos.ch/)):
 ```groovy
 dependencies {
     implementation 'ch.qos.logback:logback-classic:1.2.6'
