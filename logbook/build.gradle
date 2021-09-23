@@ -26,20 +26,20 @@ test {
         events 'passed', 'skipped', 'failed'
         exceptionFormat = 'full'
     }
+    finalizedBy jacocoTestReport
 }
 
 jar {
     from sourceSets.main.allJava
 }
 
-test {
-    finalizedBy jacocoTestReport
-}
-
 jacocoTestReport {
     dependsOn test
     reports {
-        xml.enabled(true)
-        html.enabled(true)
+        xml.enabled true
+        xml.destination file("${buildDir}/reports/jacoco/report.xml")
+        html.enabled true
+        csv.enabled false
     }
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
 }
