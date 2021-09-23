@@ -113,11 +113,6 @@ Running test:
 ./gradlew test
 ```
 
-Building the jar:
-```shell
-./gradlew build
-```
-
 Run the demo app:
 ```shell
 ./gradlew run
