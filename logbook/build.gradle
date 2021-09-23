@@ -39,8 +39,8 @@ test {
 jacocoTestReport {
     dependsOn test
     reports {
-        xml.required = true
-        csv.required = false
-        html.required = true
+        xml.enabled(true)
+        html.enabled(true)
     }
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
 }

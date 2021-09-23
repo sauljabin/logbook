@@ -8,6 +8,8 @@
 
 Logging using key value format.
 
+Logbook uses [slf4j](http://www.slf4j.org/) as facade for logging.
+
 ### Examples
 
 ```java
