@@ -10,6 +10,27 @@ Logging using key value format.
 
 Logbook uses [slf4j](http://www.slf4j.org/) as facade for logging.
 
+### How to import it
+
+Clone into your project:
+```shell
+git clone https://github.com/sauljabin/logbook.git
+```
+
+Include it in `settings.gradle`:
+```groovy
+include('logbook')
+project(":logbook").projectDir = file("logbook/logbook")
+```
+
+Add it as a dependency (using [logback](http://logback.qos.ch/)):
+```groovy
+dependencies {
+    implementation 'ch.qos.logback:logback-classic:1.2.6'
+    implementation project(':logbook')
+}
+```
+
 ### Examples
 
 ```java

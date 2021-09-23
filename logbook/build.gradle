@@ -41,5 +41,4 @@ jacocoTestReport {
         html.enabled true
         csv.enabled false
     }
-    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
 }

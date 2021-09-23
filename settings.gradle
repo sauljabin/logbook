@@ -1,4 +1,4 @@
 rootProject.name = 'logbook'
 
-include 'logbook'
-include 'demo'
+include('logbook')
+include('demo')
