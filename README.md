@@ -108,12 +108,12 @@ java.lang.RuntimeException: Oh Oh!!!
 
 ### Development
 
-Running test:
+Running tests:
 ```shell
 ./gradlew test
 ```
 
-Run the demo app:
+Running demo app:
 ```shell
 ./gradlew run
 ```
