@@ -20,4 +20,4 @@ jobs:
       - name: Publish Coverage
         uses: codecov/codecov-action@v2
         with:
-          files: ./logbook/build/reports/jacoco/test/jacocoTestReport.xml,./logbook/build/jacoco/test.exec
+          files: ./logbook/build/reports/jacoco/test/jacocoTestReport.xml
