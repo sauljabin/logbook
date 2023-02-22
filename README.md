@@ -1,6 +1,6 @@
 # logbook
 
-<a href="https://sdkman.io/jdks"><img alt="Java" src="https://img.shields.io/badge/-java-orange?logo=java&logoColor=white"></a>
+<a href="https://sdkman.io/jdks"><img alt="Java" src="https://img.shields.io/badge/-java-orange?logo=openjdk&logoColor=white"></a>
 <a href="https://github.com/sauljabin/logbook/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/sauljabin/logbook"></a>
 <a href="https://github.com/sauljabin/logbook/actions"><img alt="GitHub Actions" src="https://img.shields.io/github/checks-status/sauljabin/logbook/main?label=tests"></a>
 <a href="https://app.codecov.io/gh/sauljabin/logbook"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/sauljabin/logbook"></a>
